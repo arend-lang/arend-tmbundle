@@ -1,0 +1,48 @@
+#
+# Syntax highlighting for Agda, used by GitHub
+#
+
+scopeName: source.ard
+name: Arend
+fileTypes:
+- arend
+
+patterns:
+patterns:
+- # Line comments
+  begin: '--'
+  end: '$'
+  name: comment.line.double-dash.ard
+- # Block comments
+  begin: '{-'
+  end: '-}'
+  name: comment.block.ard
+- # Numeric literals
+  match: '-?\d+'
+  name: constant.numeric.ard
+- # Names of datatypes/records/modules/constructors
+  match: '(\\data|\\record|\\module|\\cons|\\class|\\open|\\import|\\extends|\\instance)[[:space:]]+([^:;\\\(\){}@"[:space:]]+)'
+  captures:
+    '1':
+      name: keyword.other.ard
+    '2':
+      name: entity.name.type.ard
+- # Name of functions
+  match: '(\\lemma|\\func|\\sfunc|\\use)[[:space:]]+([^:;\\\(\){}@"[:space:]]+)'
+  captures:
+    '1':
+      name: keyword.other.ard
+    '2':
+      name: entity.name.ard
+- # Keywords (including bad keywords)
+  match: '\\[-a-zA-Z\d]+'
+  name: keyword.other.ard
+- # Arrows & commas
+  match: '=>|->|,'
+  name: keyword.other.ard
+- # Metavariables and prelude operators
+  begin: '[ ,>{}\(\)]([_=@])[ \\{}\(\)]'
+  captures:
+    '1':
+      name: keyword.other.ard
+# End

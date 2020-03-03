@@ -1,0 +1,33 @@
+%YAML 1.2
+---
+# http://www.sublimetext.com/docs/3/syntax.html
+name: Arend
+file_extensions:
+  - ard
+scope: source.ard
+contexts:
+  main:
+    - match: "--"
+      push:
+        - meta_scope: comment.line.double-dash.ard
+        - match: $
+          pop: true
+    - match: "{-"
+      push:
+        - meta_scope: comment.block.ard
+        - match: "-}"
+          pop: true
+    - match: (-?\d+)
+      scope: constant.numeric.ard
+    - match: '(\\data|\\record|\\module|\\cons|\\class|\\open|\\import|\\extends|\\instance)[[:space:]]+([^:;\\\(\){}@"[:space:]]+)'
+      captures:
+        1: keyword.other.ard
+        2: entity.name.type.ard
+    - match: '(\\lemma|\\func|\\sfunc|\\use)[[:space:]]+([^:;\\\(\){}@"[:space:]]+)'
+      captures:
+        1: keyword.other.ard
+        2: entity.name.ard
+    - match: '\\[-a-zA-Z\d]+'
+      scope: keyword.other.ard
+    - match: "=>|->|,"
+      scope: keyword.other.ard

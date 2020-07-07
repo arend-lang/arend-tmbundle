@@ -40,11 +40,11 @@ patterns:
 - # Arrows & commas
   match: '=>|->|,'
   name: keyword.other.ard
-- # Metavariables and prelude operators
-  begin: '[ ,>{}\(\)]([_=@])[ \\{}\(\)]'
-  captures:
-    '1':
-      name: keyword.other.ard
+# - # Metavariables and prelude operators
+#   begin: '[ ,>{}\(\)]([_=@])[ \\{}\(\)]'
+#   captures:
+#     '1':
+#       name: keyword.other.ard
 - # String literals
   begin: '"'
   end: '"'

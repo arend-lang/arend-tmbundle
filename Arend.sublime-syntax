@@ -3,7 +3,7 @@
 # http://www.sublimetext.com/docs/3/syntax.html
 name: Arend
 file_extensions:
-  - ard
+  - arend
 scope: source.ard
 contexts:
   main:
@@ -17,7 +17,7 @@ contexts:
         - meta_scope: comment.block.ard
         - match: "-}"
           pop: true
-    - match: (-?\d+)
+    - match: '-?\d+'
       scope: constant.numeric.ard
     - match: '(\\data|\\record|\\module|\\cons|\\class|\\open|\\import|\\extends|\\instance)[[:space:]]+([^:;\\\(\){}@"[:space:]]+)'
       captures:
@@ -31,3 +31,10 @@ contexts:
       scope: keyword.other.ard
     - match: "=>|->|,"
       scope: keyword.other.ard
+    - match: '"'
+      push:
+        - meta_scope: string.quoted.double.ard
+        - match: '"'
+          pop: true
+    - match: '(?<=^|[[:space:]\(\){}])(-?\d+|0x[0-9A-F]+|-?\d+\.\d+((e|E)(\+|-)?\d+)?|-?\d+(e|E)(\+|-)?\d+)(?=[[:space:]\(\){}])'
+      scope: constant.numeric.ard

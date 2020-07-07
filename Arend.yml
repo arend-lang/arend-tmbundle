@@ -45,4 +45,11 @@ patterns:
   captures:
     '1':
       name: keyword.other.ard
+- # String literals
+  begin: '"'
+  end: '"'
+  name: string.quoted.double.ard
+- # Numeric literals
+  match: '(?<=^|[[:space:]\(\){}])(-?\d+|0x[0-9A-F]+|-?\d+\.\d+((e|E)(\+|-)?\d+)?|-?\d+(e|E)(\+|-)?\d+)(?=[[:space:]\(\){}])'
+  name: constant.numeric.ard
 # End

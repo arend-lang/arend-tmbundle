@@ -5,7 +5,7 @@
 scopeName: source.ard
 name: Arend
 fileTypes:
-- arend
+- ard
 
 patterns:
 patterns:

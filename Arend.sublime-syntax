@@ -3,7 +3,7 @@
 # http://www.sublimetext.com/docs/3/syntax.html
 name: Arend
 file_extensions:
-  - arend
+  - ard
 scope: source.ard
 contexts:
   main:

@@ -21,7 +21,7 @@ patterns:
   match: '-?\d+'
   name: constant.numeric.ard
 - # Names of datatypes/records/modules/constructors
-  match: '(\\data|\\record|\\module|\\cons|\\class|\\open|\\import|\\extends|\\instance)[[:space:]]+([^:;\\\(\){}@"[:space:]]+)'
+  match: '(\\data|\\record|\\module|\\cons|\\class|\\open|\\import|\\extends|\\instance)[[:space:]]+([^:,;\\\(\){}@"[:space:]]+)'
   captures:
     '1':
       name: keyword.other.ard

@@ -50,7 +50,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(\\data|\\record|\\module|\\cons|\\class|\\open|\\import|\\extends|\\instance)[[:space:]]+([^:;\\\(\){}@"[:space:]]+)</string>
+			<string>(\\data|\\record|\\module|\\cons|\\class|\\open|\\import|\\extends|\\instance)[[:space:]]+([^:,;\\\(\){}@"[:space:]]+)</string>
 		</dict>
 		<dict>
 			<key>captures</key>

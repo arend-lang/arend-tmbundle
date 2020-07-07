@@ -19,7 +19,7 @@ contexts:
           pop: true
     - match: '-?\d+'
       scope: constant.numeric.ard
-    - match: '(\\data|\\record|\\module|\\cons|\\class|\\open|\\import|\\extends|\\instance)[[:space:]]+([^:;\\\(\){}@"[:space:]]+)'
+    - match: '(\\data|\\record|\\module|\\cons|\\class|\\open|\\import|\\extends|\\instance)[[:space:]]+([^:,;\\\(\){}@"[:space:]]+)'
       captures:
         1: keyword.other.ard
         2: entity.name.type.ard
